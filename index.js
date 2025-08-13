@@ -8,7 +8,7 @@ app.use(express.json());
 let stocareNumar = null; // Variabilă pentru a stoca numărul
 
 // Endpoint pentru a stoca un număr
-app.post('/api/numar', (req, res) => {
+app.post('/numar', (req, res) => {
     const { numar } = req.body; // Preia numărul din cererea POST
     if (typeof numar === 'number') {
         stocareNumar = numar; // Stochează numărul
@@ -18,7 +18,7 @@ app.post('/api/numar', (req, res) => {
 });
 
 // Endpoint pentru a obține numărul
-app.get('/api/numar', (req, res) => {
+app.get('/numar', (req, res) => {
     if (stocareNumar !== null) {
         return res.status(200).json({ numar: stocareNumar }); // Returnează numărul stocat
     }
@@ -28,4 +28,5 @@ app.get('/api/numar', (req, res) => {
 // Pornirea serverului
 app.listen(PORT, () => {
     console.log(`Serverul rulează pe portul ${PORT}`);
+
 });
