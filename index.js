@@ -12,7 +12,7 @@ app.post('/postDas', (req, res) => {
     const { Das } = req.body; // get from body
     if (typeof Das === 'number') {
         dasNumber = Das; // save number
-        return res.status(200).json({ message: 'Succes dass add Dass' });
+        return res.status(200).json({ message: 'Succes add dasNumber' });
     }
     return res.status(400).json({ message: 'Invalid number' });
 });
@@ -29,3 +29,4 @@ app.get('/getDas', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is runing on ${PORT}`);
 });
+
